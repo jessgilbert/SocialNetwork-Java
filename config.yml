@@ -5,7 +5,7 @@ logging:
 
 database:
   driverClass: com.mysql.jdbc.Driver
-  user: myface
+  user: Jess
   password: myface
 
   # verifyServerCertificate=false to avoid log spam
