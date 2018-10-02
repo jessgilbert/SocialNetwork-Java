@@ -14,12 +14,13 @@ public class UserDao {
         this.jdbi = jdbi;
     }
 
-    public List<User> addUser(User user) {
+    public void addUser(User user) {
         try (Handle handle = jdbi.open()) {
-            return handle.createQuery("INSERT INTO socialnetwork.users (username, fullname, password) VALUES (:username, :fullname, :password)")
-                    .bind( "username", )
-                    .mapToBean(User.class)
-                    .list();
+            handle.createUpdate("INSERT INTO users (username, fullname, password) VALUES (:username, :fullname, :password)")
+                    .bind( "username", user.getUsername())
+                    .bind("fullname", user.getFullname())
+                    .bind("password", user.getPassword())
+                    .execute();
         }
     }
 }

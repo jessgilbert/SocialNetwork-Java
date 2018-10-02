@@ -23,6 +23,12 @@ public class User {
         this.name = name;
     }
 
+    public User(String username, String fullname, String password ) {
+        this.username = username;
+        this.fullname = fullname;
+        this.password = password;
+    }
+
     public String getName() {
         return name;
     }
@@ -54,7 +60,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
     /**
      * Below methods were automatically generated using IntelliJ and Guava.
      */
