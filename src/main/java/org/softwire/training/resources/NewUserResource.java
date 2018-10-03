@@ -41,10 +41,14 @@ public class NewUserResource {
             @FormParam("password") @NotEmpty String password,
             @FormParam("fullname") @NotEmpty String fullname) {
 
-        // TODO: Implement this!
+
         User user = new User(username, fullname, password);
 
-        userDao.addUser(user);
+        try {
+            userDao.addUser(user);
+        } catch (Exception e) {
+            return Response.seeOther(URI.create("/signupError")).build();
+        }
 
         LOGGER.error("This functionality is missing!  username: {} password: {} fullname: {}",
                 username, password, fullname);

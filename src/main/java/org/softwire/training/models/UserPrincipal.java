@@ -14,6 +14,7 @@ public class UserPrincipal implements Principal {
 
     private final User user;
 
+
     public UserPrincipal(User user) {
         this.user = user;
     }
@@ -21,6 +22,7 @@ public class UserPrincipal implements Principal {
     public User getUser() {
         return user;
     }
+
 
     @Override
     public String getName() {
